@@ -1,0 +1,113 @@
+.cards {
+    background: #F6F9FF;
+
+    padding: 40px 138px;
+}
+
+.sorting {
+    display: inline-flex;
+}
+
+.select-list {
+    width: 336px;
+    font-weight: 600;
+    height: 52px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 16px 46px;
+    /* identical to box height */
+
+
+    color: #888888;
+}
+
+.gallery__dataInput {
+    width: 126px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: #888888;
+    border-radius: 10px 0 0 10px;
+    padding: 16px;
+    border: none;
+    margin-left: 20px;
+
+    &:last-of-type {
+        border-radius: 0 10px 10px 0;
+        margin-left: 0;
+        border: none;
+    }
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.cards__list {
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+}
+
+.list__item {
+    width: 572px;
+    height: 252px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.date {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height, or 150% */
+    padding: 24px 24px 8px;
+    margin: 0;
+
+    color: #10B2D0;
+}
+
+.cards_title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    padding-left: 24px;
+    margin: 0;
+
+
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.cards_info {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 24px;
+
+
+    color: #888888;
+}
+
+.author {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height, or 150% */
+    border: none;
+    margin-left: 24px;
+
+    color: #0050EF;
+    width: 124px;
+    height: 34px;
+
+    background: rgba(0, 80, 239, 0.06);
+    border-radius: 10px;
+    text-align: center;
+}
