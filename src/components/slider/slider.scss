@@ -1,0 +1,131 @@
+.swiper {
+
+    background: linear-gradient(100.68deg, #5991FF 13.6%, #0050EF 94.69%);
+
+    &__image {
+        width: 100%;
+        height: 546px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .swiper-slide {
+        position: relative;
+    }
+
+    &__content {
+        font-family: 'Montserrat', 'Arial', sans-serif;
+        font-style: normal;
+        width: 574px;
+        color: white;
+        position: absolute;
+        top: 100px;
+        left: 137px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 56px;
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 500;
+        width: 453px;
+        margin-bottom: 48px;
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    position: absolute;
+    bottom: 64px;
+    left: 138px;
+    width: 120px;
+
+    @media screen and (max-width: 1024px) {
+        left: 100px;
+    }
+}
+
+.swiper-pagination {
+    padding-bottom: 10px;
+    
+
+    .swiper-pagination-bullet {
+        width: 29px;
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.3);;
+        border-radius: 1px;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #FFFFFF;;
+    }
+}
+
+.swiper__button {
+    color: #0050EF;
+    background-color: #FFFFFF;
+    padding: 16px 32px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+    .swiper {
+        &__image {
+            height: 450px;
+        }
+
+        &__content {
+            left: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .swiper {
+        &__image {
+            height: 400px;
+        }
+
+        &__content {
+            left: 100px;
+        }
+
+        &__title {
+            font-size: 20px;
+            line-height: 27px;
+            margin-bottom: 12px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 19px;
+            width: 360px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .swiper {
+        &__image {
+            height: 280px;
+        }
+
+        &__content {
+            left: 15px;
+            bottom: 50px;
+        }
+    }
+}
