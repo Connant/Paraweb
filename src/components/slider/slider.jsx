@@ -21,7 +21,7 @@ const Slider = () => {
                 <SwiperSlide>
                     <img className="swiper__image" src="./img/slider_1.png" alt="back" />
                     <div className="swiper__content">
-                        <h2 className="swiper__title">Как бизнесу сохранять IT-кадры на фоне кризиса</h2>
+                        <h2 className="swiper__title">Как бизнесу сохранять IT&#8209;кадры&nbsp;на фоне кризиса</h2>
                         <p className='swiper__text'>
                         Инструменты, которые могут использовать компании для удержания сотрудников
                         </p>
@@ -31,7 +31,7 @@ const Slider = () => {
                 <SwiperSlide>
                     <img className='swiper__image' src="./img/slider_1.png" alt="back" />
                     <div className='swiper__content'>
-                        <h2 className='swiper__title'>Как бизнесу сохранять IT-кадры на фоне кризиса</h2>
+                        <h2 className='swiper__title'>Как бизнесу сохранять IT&#8209;кадры&nbsp;на фоне кризиса</h2>
                         <p className='swiper__text'>
                         Инструменты, которые могут использовать компании для удержания сотрудников
                         </p>
@@ -41,7 +41,7 @@ const Slider = () => {
                 <SwiperSlide>
                     <img className='swiper__image' src="./img/slider_1.png" alt="back" />
                     <div className='swiper__content'>
-                        <h2 className='swiper__title'>Как бизнесу сохранять IT-кадры на фоне кризиса</h2>
+                        <h2 className='swiper__title'>Как бизнесу сохранять IT&#8209;кадры&nbsp;на фоне кризиса</h2>
                         <p className='swiper__text'>
                         Инструменты, которые могут использовать компании для удержания сотрудников
                         </p>

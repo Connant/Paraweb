@@ -1,95 +1,62 @@
-import React, { useState } from 'react';
-import './cards.scss'
+import React from 'react';
+import './cards.scss';
 
-export default function Cards() {
+export default function Cards({ isDataLoaded, cards, sorting, setSorting }) {
 
+  if (!isDataLoaded) {
+    return 'Loading';
+  }
 
-    const [dataFrom, setDataFrom] = useState(null);
-    const [dataTill, setDataTill] = useState(null);
-
-    const [value, setValue] = useState('');
-
-    const handleClick = (event) => {
-        setValue(event.target.value);
+  function trimText(text) {
+    if (text.length < 150) {
+      return text;
     }
 
-    const handleInputDataFrom = (e) => {
-        const value = e.target.value;
-        setDataFrom(value);
-    };
+    return `${text.slice(0, 150)}...`;
+  }
 
-    const handleInputDataTill = (e) => {
-        const value = e.target.value;
-        setDataTill(value);
-    };
+  function formatArticleDate(date) {
+    return new Date(date)
+      .toLocaleString("ru", { day: "numeric", month: "long", year: "numeric" })
+      .replace(/\s*г\./, "");
+  }
 
+  console.log(cards);
 
+  return (
+    <section className="cards">
 
+      <ul className='cards__list list'>
 
-    return (
-        <section className="cards">
-            <div className="sorting">
-                <select className='select-list' value={value} onChange={handleClick}>
-                    <option>Мышь</option>
-                    <option>Кот</option>
-                    <option>Сыр</option>
-                    <option>Молоко</option>
-                </select>
+        {cards.length === 0
+          ? <h3 className="cards-list__text">
+            Ой! Похоже, статей с такими характеристиками нет &#128532;
+          </h3>
+          : cards.map((card) => (
 
-                <div className="gallery__bigInput">
-                    <input
-                        className="gallery__dataInput"
-                        name="from"
-                        type="date"
-                        placeholder="От"
-                        onChange={handleInputDataFrom}
-                    />
-                    <input
-                        className="gallery__dataInput"
-                        name="till"
-                        type="date"
-                        placeholder="~ До"
-                        onChange={handleInputDataTill}
-                    />
-                </div>
-            </div>
+            <li className='list__item' key={card.title} onClick={() => setSorting({ ...sorting, author: card.author })}>
 
-            <ul className='cards__list list'>
-                <li className='list__item'>
-                    <p className="date">
-                        12 июня 2022
-                    </p>
-                    <h3 className="cards_title">
-                        Заголовок статьи
-                    </h3>
-                    <p className="cards_info">
-                        Краткое описание статьи или ее начало.
-                        Может занимать больше трех строк в высоту.
-                        В таком случае предложение заканчивается многоточием...
-                    </p>
-                    <button className="author">
-                        Иван Иванов
-                    </button>
-                </li>
+              <article className="list__article">
 
-                <li className='list__item'>
-                    <p className="date">
-                        12 июня 2022
-                    </p>
-                    <h3 className="cards_title">
-                        Заголовок статьи
-                    </h3>
-                    <p className="cards_info">
-                        Краткое описание статьи или ее начало.
-                        Может занимать больше трех строк в высоту.
-                        В таком случае предложение заканчивается многоточием...
-                    </p>
-                    <button className="author">
-                        Иван Иванов
-                    </button>
-                </li>
-            </ul>
-        </section>
+                <p className="date">{formatArticleDate(card.publishedAt)}</p>
 
-    )
+                <h3 className="cards_title">{card.title}</h3>
+
+                <p className='cards_info'>
+                  {trimText(card.description)}
+                </p>
+
+                <button className="author">
+                  {card.author ? card.author : "Unknown"}
+                </button>
+
+              </article>
+
+            </li>
+          ))}
+
+      </ul>
+    </section >
+
+  )
 }

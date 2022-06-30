@@ -4,15 +4,36 @@
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+
+    @media (max-width: 965px) {
+      justify-content: space-around;
+    }
 }
 
 .page-header__contacts {
     display: inline-flex;
     color: #888888;
     padding-right: 138px;
+
+    @media (max-width: 965px) {
+      padding-right: 0;
+    }
 }
 
 .page-header__logo {
     width: 121px;
     padding-left: 138px;
+
+    @media (max-width: 965px) {
+      padding-left: 0;
+    }
+}
+
+.contacts__phone {
+  padding-right: 40px;
 }
