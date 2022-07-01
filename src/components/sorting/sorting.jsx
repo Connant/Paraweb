@@ -10,20 +10,32 @@ export default function Sorting({ cards, setSorting, sorting }) {
   const dateAfterRef = useRef(null);
 
 
-  function getAuthors(cards) {
-    const uniqueAuthors = [];
+  const getAuthors = (cards) => {
+    const arr = [];
 
     cards.map((article) => {
-      if (article.author === null && !uniqueAuthors.includes("Unknown")) {
-        uniqueAuthors.push("Unknown");
+      if (article.author === null && !arr.includes("Unknown")) {
+        arr.push("Unknown");
       }
 
-      if (!uniqueAuthors.includes(article.author) && article.author !== null) {
-        uniqueAuthors.push(article.author);
+      if (!arr.includes(article.author) && article.author !== null) {
+        arr.push(article.author);
       }
     });
 
-    return uniqueAuthors.sort();
+    return arr.sort();
+  }
+
+  const handleSelect = () => {
+    setSorting({ ...sorting, author: authorRef.current.value })
+  }
+
+  const handleDateBefore = () => {
+    setSorting({...sorting, dateBefore: new Date(dateBeforeRef.current.value)})
+  }
+
+  const handleDareAfter = () => {
+    setSorting({...sorting, dateAfter: new Date(dateAfterRef.current.value)})
   }
 
   useEffect(() => {
@@ -33,62 +45,45 @@ export default function Sorting({ cards, setSorting, sorting }) {
   return (
     <div className="sorting">
       <select
-        className="select-list"
+        className="sorting__select-list select-list"
         ref={authorRef}
         value={sorting.author}
-        onChange={() =>
-          setSorting({ ...sorting, author: authorRef.current.value })
-        }
-      >
+        onChange={handleSelect} >
         <option className="select-list__option" defaultValue >
           Выбор автора
         </option>
         {authors.map((author) => (
-          <option
-            key={author}
-            value={author}
-            className="select-list__option"
-          >
+          <option key={author} value={author} className="select-list__option">
             {author}
           </option>
         ))}
       </select>
 
-      <div className="gallery__bigInput">
-        <label htmlFor="date1" className="filter__date-label">
+      <div className="sorting__date">
+        <label htmlFor="date1" className="sorting__date-label">
           От
           <input
             type="date"
             name="date1"
-            className="gallery__dataInput"
+            className="sorting__date-input"
             aria-required="true"
             aria-invalid="false"
             ref={dateBeforeRef}
-            onChange={() =>
-              setSorting({
-                ...sorting,
-                dateBefore: new Date(dateBeforeRef.current.value),
-              })
-            }
+            onChange={handleDateBefore}
             value={sorting.dateBefore.toISOString().slice(0, 10)}
           />
         </label>
-        <label htmlFor="date2" className="filter__date-label">
+        <label htmlFor="date2" className="sorting__date-label">
           До
           <input
             type="date"
             name="date2"
-            className="gallery__dataInput"
+            className="sorting__date-input"
             aria-required="true"
             aria-invalid="false"
             ref={dateAfterRef}
+            onChange={handleDareAfter}
             value={sorting.dateAfter.toISOString().slice(0, 10)}
-            onChange={() =>
-              setSorting({
-                ...sorting,
-                dateAfter: new Date(dateAfterRef.current.value),
-              })
-            }
           />
         </label>
       </div>

@@ -1,163 +1,147 @@
 .swiper {
   height: 546px;
+  box-sizing: border-box;
 
-    background: linear-gradient(100.68deg, #5991FF 13.6%, #0050EF 94.69%);
+  background: url("../../../public/img/desktop_bg.png"), linear-gradient(100.68deg, #5991ff 13.6%, #0050ef 94.69%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 
-    &__image {
-        width: 100%;
-        height: 546px;
-        object-fit: cover;
-        object-position: center;
-    }
+  @media (max-width: 550px) {
+    height: 365px;
+    background: url("../../../public/img/mobile_bg.png"), linear-gradient(100.68deg, #5991ff 13.6%, #0050ef 94.69%);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+  }
 
-    .swiper-slide {
-        position: relative;
-    }
+  .swiper-slide {
+    position: relative;
+  }
 
-    &__content {
-        font-family: 'Montserrat', 'Arial', sans-serif;
-        font-style: normal;
-        width: 45%;
-        color: white;
-        position: absolute;
-        top: 67px;
-        left: 137px;
-
-        @media (max-width: 965px) {
-          left: 100px;
-        }
-
-        @media (max-width: 888px) {
-          width: 80%;
-          left: 60px;
-        }
-
-        @media screen and (max-width: 768px) {
-          top: 47px;
-        }
-    }
-
-    &__title {
-        font-weight: 600;
-        font-size: 40px;
-        line-height: 56px;
-        margin-bottom: 24px;
-
-        @media (max-width: 965px) {
-          font-size: 34px;
-          line-height: 33px;
-        }
-
-        @media screen and (max-width: 768px) {
-          margin-bottom: 34px;
-        }
-    }
-
-    &__text {
-        font-size: 16px;
-        line-height: 22px;
-        font-weight: 500;
-        width: 453px;
-        margin-bottom: 48px;
-
-        @media screen and (max-width: 768px) {
-          margin-bottom: 68px;
-        }
-    }
-}
-
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  &__content {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-style: normal;
+    width: 45%;
+    color: white;
     position: absolute;
-    bottom: 47px;
-    left: 130px;
-    width: 120px;
+    top: 67px;
+    left: 137px;
 
-    @media screen and (max-width: 1024px) {
-        left: 100px;
+    @media (max-width: 1100px) {
+      left: 80px;
+    }
+
+    @media (max-width: 888px) {
+      width: 80%;
+      left: 60px;
     }
 
     @media screen and (max-width: 768px) {
-      bottom: 77px;
-      left: 65px;
+      top: 47px;
     }
+
+    @media screen and (max-width: 550px) {
+      left: 16px;
+      top: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 56px;
+    margin-bottom: 24px;
+
+    @media (max-width: 1100px) {
+      font-size: 34px;
+      line-height: 33px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 34px;
+    }
+
+    @media screen and (max-width: 550px) {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    width: 453px;
+    margin-bottom: 48px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 68px;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 318px;
+      font-size: 14px;
+      margin-bottom: 42px;
+    }
+  }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  position: absolute;
+  bottom: 47px;
+  left: 130px;
+  width: 120px;
+
+  @media screen and (max-width: 1024px) {
+    left: 100px;
+  }
+
+  @media screen and (max-width: 768px) {
+    bottom: 77px;
+    left: 65px;
+  }
+
+  @media screen and (max-width: 550px) {
+    left: 16px;
+    bottom: 20px;
+  }
 }
 
 .swiper-pagination {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 
 
-    .swiper-pagination-bullet {
-        width: 29px;
-        height: 3px;
-        background-color: rgba(255, 255, 255, 0.3);;
-        border-radius: 1px;
-    }
+  .swiper-pagination-bullet {
+    width: 29px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    ;
+    border-radius: 1px;
+  }
 
-    .swiper-pagination-bullet-active {
-        background-color: #FFFFFF;;
-    }
+  .swiper-pagination-bullet-active {
+    background-color: #FFFFFF;
+    ;
+  }
 }
 
 .swiper__button {
-    color: #0050EF;
-    background-color: #FFFFFF;
-    padding: 16px 32px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    margin-top: 16px;
+  color: #0050EF;
+  background-color: #FFFFFF;
+  padding: 16px 32px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 16px;
 }
-
-// @media screen and (max-width: 1024px) {
-//     .swiper {
-//         &__image {
-//             height: 450px;
-//         }
-
-//         &__content {
-//             left: 100px;
-//         }
-//     }
-// }
-
-// @media screen and (max-width: 768px) {
-//     .swiper {
-//         &__image {
-//             height: 400px;
-//         }
-
-//         &__content {
-//             left: 100px;
-//         }
-
-//         &__title {
-//             font-size: 20px;
-//             line-height: 27px;
-//             margin-bottom: 12px;
-//         }
-
-//         &__text {
-//             font-size: 14px;
-//             line-height: 19px;
-//             width: 360px;
-//         }
-//     }
-// }
-
-// @media screen and (max-width: 600px) {
-//     .swiper {
-//         &__image {
-//             height: 280px;
-//         }
-
-//         &__content {
-//             left: 15px;
-//             bottom: 50px;
-//         }
-//     }
-// }

@@ -11,9 +11,8 @@
   padding: 0;
   list-style: none;
   display: grid;
-  // width: 1174px;
   padding: 0 138px;
-  grid-template-columns: repeat(auto-fit, minmax(572px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 2fr));
   grid-gap: 20px;
 
   @media (max-width: 965px) {
@@ -51,7 +50,7 @@
   border-radius: 20px;
 }
 
-.date {
+.article__date {
   font-weight: 600;
   font-size: 12px;
   line-height: 18px;
@@ -61,7 +60,7 @@
   color: #10B2D0;
 }
 
-.cards_title {
+.article__title {
   min-height: 64px;
   font-weight: 600;
   font-size: 20px;
@@ -73,7 +72,7 @@
   color: rgba(0, 0, 0, 0.65);
 }
 
-.cards_info {
+.article__info {
   height: 72px;
   font-style: normal;
   font-weight: 400;
@@ -86,7 +85,7 @@
   color: #888888;
 }
 
-.author {
+.article__author {
   font-weight: 600;
   font-size: 12px;
   line-height: 18px;
